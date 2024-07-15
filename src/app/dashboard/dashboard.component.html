@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div *ngIf="sideBarStatus" style="height: 92vh;" class="col-lg-1 bg-dark d-flex flex-column p-3">
+            <a class="mb-3 fw-bolder" style="text-decoration: none;color: white;" routerLink="/dashboard">Home</a>
+            <a class="fw-bolder" style="text-decoration: none;color: white;" routerLink="/users">Users</a>
+            <button (click)="logout()" class="btn text-light mt-auto fw-bolder">Logout</button>
+        </div>
+        <div class="col">
+            <div class="row mt-2">
+                <div class="col-lg-8">
+                    <div style="height:140px;background-image: url(http://www.pixelstalk.net/wp-content/uploads/2016/10/HD-abstract-colorful-wallpapers.jpg);background-size: cover;" class="d-flex banner rounded p-3 align-items-center shadow">
+                        <h1> <i (click)="menuBtnClicked()" class="fa-solid fa-bars btn"></i> Welcome {{adminName}}</h1>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-lg-6">
+                            <app-calender></app-calender>
+                        </div>
+                        <div class="col-lg-6">
+                            <app-chart></app-chart>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div style="height:400px" class="rounded p-2 border shadow">
+                        <app-edit-admin (onAdminChange)="adminChange($event)"></app-edit-admin>
+                    </div>
+                    <div style="height: 170px;background-image :url(https://images.hdqwalls.com/download/abstract-colorful-space-colors-art-4k-jr-2560x1440.jpg);background-size: cover;" class="d-flex banner rounded p-3 align-items-center shadow mt-3">
+                        <h5>
+                            <i class="fa-solid fa-users btn text-light fa-1x"></i>
+                            Total employees : {{userCount}}
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
